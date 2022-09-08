@@ -1,7 +1,7 @@
-<?php include "includes/templates/header.php"; ?>
+<?php include "init.php";
+      include $tpl . "header.php"; 
+      include 'includes/languages/en.php'; ?>
 
-  <div class="alert alert-success">
-    Hello
-  </div>
 
-<?php include "includes/templates/footer.php"; ?>
+
+<?php include $tpl . "footer.php"; ?>
