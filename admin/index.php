@@ -1,5 +1,7 @@
 <?php include "includes/templates/header.php"; ?>
 
-<?php include "includes/templates/footer.php"; ?>
+  <div class="alert alert-success">
+    Hello
+  </div>
 
-hello
+<?php include "includes/templates/footer.php"; ?>
