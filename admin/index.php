@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php 
   include "init.php";
   include $tpl . 'header.php'; ?>
@@ -11,12 +10,3 @@
   </form>
 
 <?php include $tpl . 'footer.php'; ?>
-=======
-<?php include "init.php";
-      include $tpl . "header.php"; 
-      include 'includes/languages/en.php'; ?>
-
-
-
-<?php include $tpl . "footer.php"; ?>
->>>>>>> 0b2c1a8cce65002251c81c805dd267b05c277929
