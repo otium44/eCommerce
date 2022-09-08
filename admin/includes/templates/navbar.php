@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#app-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class='navbar-brand' href="#">Home</a>
+    <div class="collapse navbar-collapse" id="app-nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="#">Categories</a></li>
+        <li class="nav-item active"><a class="nav-link" href="#">one</a></li>
+        <li class="nav-item active"><a class="nav-link" href="#">two</a></li>
+        <li class="nav-item active"><a class="nav-link" href="#">trhee</a></li>
+        <li class="nav-item active"><a class="nav-link" href="#">four</a></li>
+      </ul>
+      <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            User
+          </a>
+          <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-light" href="#">Edit Profile</a>
+            <a class="dropdown-item text-light" href="#">Settings</a>
+            <a class="dropdown-item text-light" href="#">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,6 +1,6 @@
 <?php 
   include "init.php";
-  include $tpl . 'header.php'; ?>
+  ?>
 
   <form class='login' action='<?php echo $_SERVER['PHP_SELF'] ?>' method='POST'>
     <h4 class='text-center'>Admin Login</h4>

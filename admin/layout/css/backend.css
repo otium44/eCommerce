@@ -1,7 +1,7 @@
 /* Start Main Rulez */
 body{
   background-color: #f4f4f4;
-
+  font-size: 16px;
 }
 /* End Main Rulez */
 
@@ -24,3 +24,40 @@ body{
   background-color: #008dde;
 }
 /* End Login Form */
+
+/* Start Bootstrap Edits */
+.navbar{
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.nav > li > a,
+.navbar-brand{
+  padding: 0px 12px;
+}
+a.text-light:hover, a.text-light:focus {
+  color: #dae0e5 !important;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #16181b;
+  text-decoration: none;
+  background-color: #1f2b37;
+}
+.dropdown-divider{
+  border-color: #575d64;
+}
+.dropdown-menu{
+  border:0;
+  border-radius: 0;
+  left: 0;
+}
+.dropdown-menu a{
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+.dropdown-menu a:hover{
+  padding-left: 20px;
+}
+.navbar-brand{
+  font-size: 1em;
+}
+/* End Bootstrap Edits */
