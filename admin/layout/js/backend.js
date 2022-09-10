@@ -1,4 +1,4 @@
-jQuery(function() {
+$(function() {
   "use strict";
   // Hide Placeholder On Form Focus
   $('[placeholder]').focus(function(){

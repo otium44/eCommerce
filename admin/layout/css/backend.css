@@ -61,3 +61,12 @@ a.text-light:hover, a.text-light:focus {
   font-size: 1em;
 }
 /* End Bootstrap Edits */
+
+/* Strart Members Page */
+h1{
+  font-size: 55px;
+  margin: 40px 0;
+  font-weight: bold;
+  color: #666;
+}
+/* End Members Page */
