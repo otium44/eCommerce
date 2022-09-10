@@ -3,14 +3,14 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#app-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class='navbar-brand' href="#">Home</a>
+    <a class='navbar-brand' href="#"><?php echo lang('Main'); ?></a>
     <div class="collapse navbar-collapse" id="app-nav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a class="nav-link" href="#">Categories</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#">one</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#">two</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#">trhee</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#">four</a></li>
+        <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('Category'); ?></a></li>
+        <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('ITEMS'); ?></a></li>
+        <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('MEMBERS'); ?></a></li>
+        <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('STATISTICS'); ?></a></li>
+        <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('LOGS'); ?></a></li>
       </ul>
       <ul class="navbar-nav">
       <li class="nav-item dropdown">

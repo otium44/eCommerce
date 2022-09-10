@@ -15,4 +15,7 @@ $lang = 'includes/languages/'; // Language dir
 
 include $lang . 'en.php'; 
 include $tpl . "header.php"; 
-include $tpl . "navbar.php"; 
+
+// Include navbar in all pages expect the one with $noNavbar Vairbale
+
+if (!isset($noNavbar)){include $tpl . "navbar.php";}

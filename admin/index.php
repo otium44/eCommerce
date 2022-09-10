@@ -1,9 +1,9 @@
 <?php 
   session_start();
+  $noNavbar = '';
   if (isset($_SESSION['Username'])) {
 
     header('Location: dashboard.php'); // Redirect to dashboard page
-
   }
 
   include "init.php";

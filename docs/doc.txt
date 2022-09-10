@@ -1,0 +1,3 @@
+We Have Class Named '$noNavbar'
+=====================================
+the main advantege of it is to hide the NavBar in the Login pages.
