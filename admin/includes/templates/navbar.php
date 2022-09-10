@@ -20,7 +20,7 @@
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-light" href="#">Edit Profile</a>
             <a class="dropdown-item text-light" href="#">Settings</a>
-            <a class="dropdown-item text-light" href="#">Logout</a>
+            <a class="dropdown-item text-light" href="logout.php">Logout</a>
           </div>
         </li>
       </ul>

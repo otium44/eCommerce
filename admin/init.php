@@ -2,6 +2,8 @@
 
 // initlize file make edit's easier in the feture
 
+include 'config.php';
+
 // Routes
 
 $tpl = 'includes/templates/'; // teplates
