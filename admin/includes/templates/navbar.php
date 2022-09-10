@@ -18,7 +18,7 @@
             User
           </a>
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-light" href="#">Edit Profile</a>
+            <a class="dropdown-item text-light" href="members.php?do=Edit&userid=<?php echo $_SESSION['ID']; ?>">Edit Profile</a>
             <a class="dropdown-item text-light" href="#">Settings</a>
             <a class="dropdown-item text-light" href="logout.php">Logout</a>
           </div>

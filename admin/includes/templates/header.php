@@ -7,6 +7,6 @@
   <link rel="stylesheet" href="<?php echo $css; ?>bootstrap.css">
   <link rel="stylesheet" href="<?php echo $css; ?>backend.css">
   <script src="https://kit.fontawesome.com/1e6ed09e58.js" crossorigin="anonymous"></script>
-  <title>eCommerce</title>
+  <title><?php getTitle(); ?></title>
 </head>
 <body>

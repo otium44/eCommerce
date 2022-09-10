@@ -1,3 +1,15 @@
 We Have Class Named '$noNavbar'
 =====================================
-the main advantege of it is to hide the NavBar in the Login pages.
+The main advantege of it is to hide the NavBar in the Login pages.
+
+===========
+
+getTitle Function
+
+======================================
+
+We made a Function called 'getTitle()' that bring to us the name of the page
+and then we put it in the Title Tag of the Page,
+To run this Function we should make a variable called pageTittle in every page with the page name.
+
+============
