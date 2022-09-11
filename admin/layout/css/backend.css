@@ -3,6 +3,13 @@ body{
   background-color: #f4f4f4;
   font-size: 16px;
 }
+.asterisk{
+  position: absolute;
+  font-size: 30px;
+  right: 25px;
+  top: 2px;
+  color: #d20707;
+}
 /* End Main Rulez */
 
 /* Start Login Form */
@@ -60,6 +67,10 @@ a.text-light:hover, a.text-light:focus {
 .navbar-brand{
   font-size: 1em;
 }
+.form-control{
+  position: relative;
+}
+
 /* End Bootstrap Edits */
 
 /* Strart Members Page */

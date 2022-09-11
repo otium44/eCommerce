@@ -25,7 +25,61 @@
 
       // Manage Page
 
-    } elseif ($do == 'Edit') { // Edit page 
+      echo "Hello You are in manage page<br><br>";
+      
+      echo "<a href='members.php?do=Add' class='btn btn-primary'>Add New Member</a>";
+
+
+    } else if ($do == 'Add'){ 
+      // Add Members Page
+      ?>
+      <h1 class='text-center'>Add New Member</h1>
+        <div class="container edit-page-container">
+          <form action="?do=Insert" method="POST">
+            <!-- Username Field -->
+            <div class="form-group row align-items-center">
+              <label class='col-sm-2  '>Username</label>
+              <div class="col-sm-10 col-md-6">
+                <input type="text" name="username" class='form-control' autocomplete="off" required='required'  placeholder='Username To Login Into Shop' />
+              </div>
+            </div>
+            <!-- Password Field -->
+            <div class="form-group row align-items-center">
+              <label class='col-sm-2 control-label'>Password</label>
+              <div class="col-sm-10 col-md-6">
+                <input type="password" name="password" class='form-control' autocomplete="off" required='required' placeholder='Password Must Be Hard & Complex' />
+              </div>
+            </div>
+            <!-- Email Field -->
+            <div class="form-group row align-items-center">
+              <label class='col-sm-2 control-label'>Email</label>
+              <div class="col-sm-10 col-md-6">
+                <input type="email" name="email" class='form-control' required='required' placeholder='Email Must Be Valid' />
+              </div>
+            </div>
+            <!-- Full Name Field -->
+            <div class="form-group row align-items-center">
+              <label class='col-sm-2 control-label'>Full Name</label>
+              <div class="col-sm-10 col-md-6">
+                <input type="text" name="full" class='form-control' required='required' placeholder='Full Name Appear In Your Profile Page' />
+              </div>
+            </div>
+            <div class="form-group row align-items-center">
+              <div class="col-2"></div>
+              <div class="col-sm-2">
+                <input type="submit" value='Add Member' class='btn btn-primary btn-lg'>
+              </div>
+            </div>
+          </form>
+        </div>
+
+<?php
+    } elseif ($do == "Insert"){
+    // Insert Member Page
+
+    echo $_POST['username'] . $_POST['password'] . $_POST['email'] . $_POST['full'];
+    }
+    elseif ($do == 'Edit') { // Edit page 
 
       // Check If Get Request userid is Numeric & Get the integer value of it
     
@@ -58,29 +112,29 @@
             <div class="form-group row align-items-center">
               <label class='col-sm-2  '>Username</label>
               <div class="col-sm-10 col-md-6">
-                <input type="text" name="username" value="<?php echo $row['Username'] ?>" class='form-control' autocomplete="off">
+                <input type="text" name="username" value="<?php echo $row['Username'] ?>" class='form-control' autocomplete="off" required='required' />
               </div>
             </div>
             <!-- Password Field -->
             <div class="form-group row align-items-center">
               <label class='col-sm-2 control-label'>password</label>
               <div class="col-sm-10 col-md-6">
-                <input type="password" name="oldpassword" value="<?php echo $row['Password'];  ?>">
-                <input type="password" name="newpassword" class='form-control' autocomplete="off">
+                <input type="password" name="oldpassword" value="<?php echo $row['Password'];  ?>" style='display:none'>
+                <input type="password" name="newpassword" class='form-control' autocomplete="off" placeholder='Leave lank if you dont want to change'>
               </div>
             </div>
             <!-- Email Field -->
             <div class="form-group row align-items-center">
               <label class='col-sm-2 control-label'>Email</label>
               <div class="col-sm-10 col-md-6">
-                <input type="email" name="email" value="<?php echo $row['Email'] ?>" class='form-control'>
+                <input type="email" name="email" value="<?php echo $row['Email'] ?>" class='form-control' required='required' />
               </div>
             </div>
             <!-- Full Name Field -->
             <div class="form-group row align-items-center">
               <label class='col-sm-2 control-label'>Full Name</label>
               <div class="col-sm-10 col-md-6">
-                <input type="text" name="full" value="<?php echo $row['FullName'] ?>" class='form-control'>
+                <input type="text" name="full" value="<?php echo $row['FullName'] ?>" class='form-control' required='required' />
               </div>
             </div>
             <div class="form-group row align-items-center">
@@ -100,7 +154,8 @@
       }
     } elseif ($do == 'Update') { // Update Page
 
-      echo "<h1 class='text-center'>Edit Member</h1>";
+      echo "<h1 class='text-center'>Update Member</h1>";
+      echo "<div class='container'>";
 
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -121,31 +176,31 @@
 
         if (strlen($user) < 4) {
 
-          $formErrors[] =  'Username Can\'t be Less Than 4 Characters';
+          $formErrors[] =  '<div class="alert alert-danger">Username Can\'t be Less Than <strong>4 Characters</strong></div>';
 
         }
 
         if (empty($user)) {
 
-          $formErrors[] =  'Username Can\'t be empty';
+          $formErrors[] =  '<div class="alert alert-danger">Username Can\'t be <strong>empty</strong></div>';
 
         }
 
         if (empty($name)) {
 
-          $formErrors[] =  'Full Name Can\'t be empty';
+          $formErrors[] =  '<div class="alert alert-danger">Full Name Can\'t be <strong>empty</strong></div>';
 
         }
 
         if (empty($email)) {
 
-          $formErrors[] =  'Email Can\'t be empty';
+          $formErrors[] =  '<div class="alert alert-danger">Email Can\'t be <strong>empty</strong></div>';
 
         }
 
         foreach($formErrors as $error) {
 
-          echo $error . '<br/>';
+          echo $error;
 
         }
 
@@ -160,7 +215,7 @@
 
         // Echo Success Message
 
-        echo $stmt->rowCount() . ' Record Updated';
+        echo "<div class='alert alert-success'>" . $stmt->rowCount() . ' Record Updated' . "</div>";
       }
 
       } else {
@@ -168,6 +223,7 @@
           echo 'You Can\'t Browse This Page Directry';
 
       }
+      echo "</div>";
 
     }
 
