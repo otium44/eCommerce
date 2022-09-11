@@ -22,14 +22,82 @@
     // Start Manage page
 
     if ($do == 'Manage') {
+      // Manage Members Page
+      ?>
 
-      // Manage Page
+        <h1 class='text-center'>Manage Members</h1>
+        <div class="container">
+          <div class="table-responsive">
+            <table class="main-table text-center table table-bordered">
+              <tr>
+                <td>#ID</td>
+                <td>Username</td>
+                <td>Email</td>
+                <td>Full Name</td>
+                <td>Registerd Date</td>
+                <td>Control</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <a href="#" class="btn btn-outline-success">Edit</a>
+                  <a href="#" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <a href="#" class="btn btn-outline-success">Edit</a>
+                  <a href="#" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <a href="#" class="btn btn-outline-success">Edit</a>
+                  <a href="#" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <a href="#" class="btn btn-outline-success">Edit</a>
+                  <a href="#" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <a href="#" class="btn btn-outline-success">Edit</a>
+                  <a href="#" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <a href='members.php?do=Add' class='btn btn-primary add-btn'><i class="fa fa-plus"></i> Add New Member</a>
 
-      echo "Hello You are in manage page<br><br>";
-      
-      echo "<a href='members.php?do=Add' class='btn btn-primary'>Add New Member</a>";
-
-
+        </div>
+      <?php
     } else if ($do == 'Add'){ 
       // Add Members Page
       ?>
