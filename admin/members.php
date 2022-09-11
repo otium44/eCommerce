@@ -93,6 +93,7 @@
       
       $hashPass = sha1($_POST['password']);
 
+
       // Validate The Form
 
       $formErrors = array();
@@ -136,11 +137,11 @@
       // Check if There's No Error Proceed The Update Operation
 
       if (empty($formErrors)) {
-
+        
       // Insert user info in the database
 
-      $stmt = $con->prepare("INSERT INTO users (Username, Password, Email, FullName) VALUES (?, ?, ?, ?)");
-      $stmt->execute(array($user,$hashedPass,$email,$name));
+      $stmt = $con->prepare('INSERT INTO users (Username, Password, Email, FullName) VALUES (?, ?, ?, ?)');
+      $stmt->execute(array($user,$hashPass,$email,$name));
 
       // Echo Success Message
 
