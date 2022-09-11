@@ -139,8 +139,7 @@
 
       // Insert user info in the database
 
-      $stmt = $con->prepare("INSERT INTO
-         users(Username, Password, Email, FullName)VALUES(?, ?, ?, ?)");
+      $stmt = $con->prepare("INSERT INTO users (Username, Password, Email, FullName) VALUES (?, ?, ?, ?)");
       $stmt->execute(array($user,$hashedPass,$email,$name));
 
       // Echo Success Message
