@@ -13,4 +13,11 @@ $(function() {
       $(this).after('<span class="asterisk">*<span>');
     }
   })
+  $('.show-pass').click(function(){
+    if($('#password').attr('type') == 'password'){
+      $('#password').attr('type', 'text');
+    } else {
+      $('#password').attr('type', 'password');
+    }
+  })
 })

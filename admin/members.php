@@ -47,8 +47,8 @@
             <div class="form-group row align-items-center">
               <label class='col-sm-2 control-label'>Password</label>
               <div class="col-sm-10 col-md-6">
-                <input type="password" name="password" class='form-control' autocomplete="off" required='required' placeholder='Password Must Be Hard & Complex' />
-                <i class="show-pass fa fa-eye fa-2x"></i>
+                <input type="password" name="password" class='form-control' autocomplete="off" required='required' placeholder='Password Must Be Hard & Complex' id='password'/>
+                <i class="show-pass fa fa-eye "></i>
               </div>
             </div>
             <!-- Email Field -->

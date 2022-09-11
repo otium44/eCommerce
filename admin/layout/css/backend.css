@@ -6,8 +6,8 @@ body{
 .asterisk{
   position: absolute;
   font-size: 30px;
-  right: 25px;
-  top: 2px;
+  right: -5px;
+  top: 0px;
   color: #d20707;
 }
 /* End Main Rulez */
@@ -80,9 +80,14 @@ h1{
   font-weight: bold;
   color: #666;
 }
-.show-pass {
-    position:absolute;
-    top: 6px;
-    right: -30px;
-}
 /* End Members Page */
+/* Start Add Page */
+.show-pass {
+  position:absolute;
+  top: 11px;
+  right: 30px;
+  font-size: 16px;
+  color: #777;
+  cursor: pointer;
+}
+/* End Add Page */
