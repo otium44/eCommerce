@@ -80,4 +80,9 @@ h1{
   font-weight: bold;
   color: #666;
 }
+.show-pass {
+    position:absolute;
+    top: 6px;
+    right: -30px;
+}
 /* End Members Page */

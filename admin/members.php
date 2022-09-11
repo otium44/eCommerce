@@ -48,6 +48,7 @@
               <label class='col-sm-2 control-label'>Password</label>
               <div class="col-sm-10 col-md-6">
                 <input type="password" name="password" class='form-control' autocomplete="off" required='required' placeholder='Password Must Be Hard & Complex' />
+                <i class="show-pass fa fa-eye fa-2x"></i>
               </div>
             </div>
             <!-- Email Field -->
@@ -75,9 +76,86 @@
 
 <?php
     } elseif ($do == "Insert"){
+
     // Insert Member Page
 
-    echo $_POST['username'] . $_POST['password'] . $_POST['email'] . $_POST['full'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+      echo "<h1 class='text-center'>Update Member</h1>";
+      echo "<div class='container'>";
+
+      // Get Variables from form
+
+      $user     = $_POST['username'];
+      $pass     = $_POST['password'];
+      $email    = $_POST['email'];
+      $name     = $_POST['full'];
+      
+      $hashPass = sha1($_POST['password']);
+
+      // Validate The Form
+
+      $formErrors = array();
+
+      if (strlen($user) < 4) {
+
+        $formErrors[] =  'Username Can\'t be Less Than <strong>4 Characters</strong>';
+
+      }
+
+      if (empty($user)) {
+
+        $formErrors[] =  'Username Can\'t be <strong>empty</strong>';
+
+      }
+      
+      if (empty($pass)) {
+
+        $formErrors[] =  'password Can\'t be <strong>empty</strong>';
+
+      }
+
+      if (empty($name)) {
+
+        $formErrors[] =  'Full Name Can\'t be <strong>empty</strong>';
+
+      }
+
+      if (empty($email)) {
+
+        $formErrors[] =  'Email Can\'t be <strong>empty</strong>';
+
+      }
+
+      foreach($formErrors as $error) {
+
+        echo '<div class="alert alert-danger">' . $error . '</div>';
+
+      }
+
+      // Check if There's No Error Proceed The Update Operation
+
+      if (empty($formErrors)) {
+
+      // Insert user info in the database
+
+      $stmt = $con->prepare("INSERT INTO
+         users(Username, Password, Email, FullName)VALUES(?, ?, ?, ?)");
+      $stmt->execute(array($user,$hashedPass,$email,$name));
+
+      // Echo Success Message
+
+      echo "<div class='alert alert-success'>" . $stmt->rowCount() . ' Record Updated' . "</div>";
+    }
+
+  } else {
+
+        echo 'You Can\'t Browse This Page Directry';
+
+    }
+    echo "</div>";
+
+
     }
     elseif ($do == 'Edit') { // Edit page 
 
@@ -120,7 +198,7 @@
               <label class='col-sm-2 control-label'>password</label>
               <div class="col-sm-10 col-md-6">
                 <input type="password" name="oldpassword" value="<?php echo $row['Password'];  ?>" style='display:none'>
-                <input type="password" name="newpassword" class='form-control' autocomplete="off" placeholder='Leave lank if you dont want to change'>
+                <input type="password" name="newpassword" class='form-control' autocomplete="off" placeholder='Leave Blank if you dont want to change'>
               </div>
             </div>
             <!-- Email Field -->
