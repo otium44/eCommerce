@@ -15,7 +15,7 @@
       <ul class="navbar-nav">
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            User
+            <?php echo $_SESSION['Username'] ?>
           </a>
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-light" href="members.php?do=Edit&userid=<?php echo $_SESSION['ID']; ?>">Edit Profile</a>

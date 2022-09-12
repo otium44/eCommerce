@@ -19,5 +19,14 @@ $(function() {
     } else {
       $('#password').attr('type', 'password');
     }
-  })
-})
+  });
+
+// Confirmation Message On Button
+
+$('.confirm').click(function() {
+
+    return confirm('Are You Sure?');
+
+});
+
+});

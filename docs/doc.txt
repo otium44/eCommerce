@@ -13,3 +13,10 @@ and then we put it in the Title Tag of the Page,
 To run this Function we should make a variable called pageTittle in every page with the page name.
 
 ============
+
+RedirectHome Function
+
+======================================
+
+I made this Function so it can used to redirect any GET request and print error 
+message and then redirect to index.php page after a seconds you can choose

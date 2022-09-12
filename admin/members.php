@@ -21,8 +21,13 @@
 
     // Start Manage page
 
-    if ($do == 'Manage') {
-      // Manage Members Page
+    if ($do == 'Manage') { // ===== Manage Members Page =====
+
+      $stmt = $con->prepare("SELECT * FROM users WHERE GroupID != 1");
+      $stmt->execute();
+      $rows = $stmt->fetchAll();
+
+
       ?>
 
         <h1 class='text-center'>Manage Members</h1>
@@ -37,61 +42,26 @@
                 <td>Registerd Date</td>
                 <td>Control</td>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="#" class="btn btn-outline-success">Edit</a>
-                  <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="#" class="btn btn-outline-success">Edit</a>
-                  <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="#" class="btn btn-outline-success">Edit</a>
-                  <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="#" class="btn btn-outline-success">Edit</a>
-                  <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="#" class="btn btn-outline-success">Edit</a>
-                  <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
+              <?php
+
+                foreach($rows as $row) {
+
+                  echo "<tr>";
+                    echo "<td>" . $row['UserID'] . "</td>";
+                    echo "<td>" . $row['Username'] . "</td>";
+                    echo "<td>" . $row['Email'] . "</td>";
+                    echo "<td>" . $row['FullName'] . "</td>";
+                    echo "<td></td>";
+                    echo "<td>
+                        <a href='members.php?do=Edit&userid=". $row['UserID'] ."' class='btn btn-success'>Edit</a>
+                        <a href='members.php?do=Delete&userid=". $row['UserID'] ."' class='btn btn-danger confirm'>Delete</a>
+                    </td>";
+                  echo "</tr>";
+
+                }
+
+              ?>
+
             </table>
           </div>
           <a href='members.php?do=Add' class='btn btn-primary add-btn'><i class="fa fa-plus"></i> Add New Member</a>
@@ -99,7 +69,7 @@
         </div>
       <?php
     } else if ($do == 'Add'){ 
-      // Add Members Page
+      // ===== Add Members Page =====
       ?>
       <h1 class='text-center'>Add New Member</h1>
         <div class="container edit-page-container">
@@ -145,7 +115,7 @@
 <?php
     } elseif ($do == "Insert"){
 
-    // Insert Member Page
+    // ===== Insert Member Page =====
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -218,14 +188,15 @@
 
   } else {
 
-        echo 'You Can\'t Browse This Page Directry';
+        $errorMsg = 'You Can\'t Browse This Page Directrly';
+        redirectHome($errorMsg, 5);
 
     }
     echo "</div>";
 
 
     }
-    elseif ($do == 'Edit') { // Edit page 
+    elseif ($do == 'Edit') { // ===== Edit page =====
 
       // Check If Get Request userid is Numeric & Get the integer value of it
     
@@ -298,7 +269,7 @@
           echo 'There\'s No Such ID';
 
       }
-    } elseif ($do == 'Update') { // Update Page
+    } elseif ($do == 'Update') { // ===== Update Page =====
 
       echo "<h1 class='text-center'>Update Member</h1>";
       echo "<div class='container'>";
@@ -366,10 +337,44 @@
 
       } else {
 
-          echo 'You Can\'t Browse This Page Directry';
+          redirectHome("You Can't Browse This Page Directly", 5);
 
       }
       echo "</div>";
+
+      } elseif ($do == 'Delete') { // ===== Delete Member Page =====
+
+        echo "<h1 class='text-center'>Delete Member</h1>";
+        echo "<div class='container'>";
+
+          // Check If Get Request userid is Numeric & Get the integer value of it
+      
+        $userid = (isset($_GET['userid']) && is_numeric($_GET['userid'])) ? intval($_GET['userid']) : 0;
+
+        // Select All Data depend on this ID
+
+        $stmt = $con->prepare('SELECT* FROM users WHERE userid = ? LIMIT 1');
+        
+        // Execute Query
+
+        $stmt->execute(array($userid));
+
+        // The Row Count 
+
+        $count = $stmt->rowCount();
+
+        if ($stmt->rowCount() > 0) { 
+
+            $stmt = $con->prepare("DELETE FROM users WHERE UserID = :zuser");
+            $stmt->bindParam(":zuser", $userid);
+            $stmt->execute();
+
+            echo "<div class='alert alert-success'>" . $stmt->rowCount() . ' Record Deleted' . "</div>";
+
+
+        } else echo 'There No Such User';
+
+      echo '</div>';
 
     }
 
