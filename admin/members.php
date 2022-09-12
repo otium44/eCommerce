@@ -53,8 +53,8 @@
                     echo "<td>" . $row['FullName'] . "</td>";
                     echo "<td></td>";
                     echo "<td>
-                        <a href='members.php?do=Edit&userid=". $row['UserID'] ."' class='btn btn-success'>Edit</a>
-                        <a href='members.php?do=Delete&userid=". $row['UserID'] ."' class='btn btn-danger confirm'>Delete</a>
+                        <a href='members.php?do=Edit&userid=". $row['UserID'] ."' class='btn btn-outline-success'><i class='fa fa-edit'></i> Edit</a>
+                        <a href='members.php?do=Delete&userid=". $row['UserID'] ."' class='btn btn-danger confirm'><i class='fa fa-close'></i> Delete</a>
                     </td>";
                   echo "</tr>";
 
@@ -64,7 +64,7 @@
 
             </table>
           </div>
-          <a href='members.php?do=Add' class='btn btn-primary add-btn'><i class="fa fa-plus"></i> Add New Member</a>
+          <a href='members.php?do=Add' class='btn btn-primary add-btn'><i class="fa fa-plus"></i> New Member</a>
 
         </div>
       <?php
