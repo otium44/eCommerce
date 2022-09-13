@@ -20,3 +20,9 @@ CheckItem Function
 =======================================
 This Function do sql statments and check the item in the database i use it to check the user
 if exists in add user page and in delete user page.
+
+
+countItem Function
+=======================================
+This Function count how many users are registered in the database
+it has two arguments you can use it to count anything else.

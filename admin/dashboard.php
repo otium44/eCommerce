@@ -7,7 +7,11 @@
 
     include 'init.php';
 
-    /* Start Dashboard Page */ ?>
+    /* Start Dashboard Page */ 
+
+  
+
+    ?>
 
     <div class="home-stats">
       <div class="container text-center">
@@ -16,7 +20,7 @@
           <div class="col-md-3">
             <div class="stat">
               Total Members
-              <strong>200</strong>
+              <strong><?php countItems('UserID', 'users'); ?></strong>
             </div>
           </div>
           <div class="col-md-3">
