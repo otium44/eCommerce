@@ -75,14 +75,32 @@ a.text-light:hover, a.text-light:focus {
 
 /* Start Dashboard Page */
 .home-stats .stat{
-  background-color: #eee;
-  border: 1px solid #ccc;
   padding: 20px;
   font-size: 15px;
+  color: #fff;
+  border-radius: 4px;
+}
+.home-stats .stat a{
+  color: #fff;
+}
+.home-stats .stat a:hover{
+  text-decoration: none;
 }
 .home-stats .stat strong{
   display: block;
-  font-size: 50px;
+  font-size: 60px;
+}
+.home-stats .st-members{
+  background-color: #0099e5;
+}
+.home-stats .st-pending{
+  background-color: #ff4c4c;
+}
+.home-stats .st-items{
+  background-color: #34bf49;
+}
+.home-stats .st-comments{
+  background-color: #00a98f;
 }
 .latest{
   margin-top: 30px;

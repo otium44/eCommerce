@@ -3,7 +3,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#app-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class='navbar-brand' href="#"><?php echo lang('Main'); ?></a>
+    <a class='navbar-brand' href="dashboard.php"><?php echo lang('Main'); ?></a>
     <div class="collapse navbar-collapse" id="app-nav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('Category'); ?></a></li>

@@ -66,7 +66,7 @@
                     
                         if ($row['RegStatus'] == 0) {
 
-                          echo "<a href='members.php?do=Delete&userid=". $row['UserID'] ."' class='btn btn-info'><i class='fa fa-close'></i> Activate</a>";
+                          echo "<a href='members.php?do=Delete&userid=". $row['UserID'] ."' class='btn btn-info ml-1'><i class='fa-solid fa-check'></i> Activate</a>";
 
                         }
 

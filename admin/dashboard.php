@@ -18,25 +18,25 @@
         <h1>Dashboard</h1>
         <div class="row">
           <div class="col-md-3">
-            <div class="stat">
+            <div class="stat st-members">
               Total Members
-              <strong><?php countItems('UserID', 'users'); ?></strong>
+              <strong><a href="members.php"><?php countItems('UserID', 'users'); ?></a></strong>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="stat">
+            <div class="stat st-pending">
               Pending Members
               <strong><a href="members.php?do=Manage&page=Pending">25</a></strong>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="stat">
+            <div class="stat st-items">
               Total Items
               <strong>20</strong>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="stat">
+            <div class="stat st-comments">
               Total Comments
               <strong>2030</strong>
             </div>
