@@ -73,6 +73,22 @@ a.text-light:hover, a.text-light:focus {
 
 /* End Bootstrap Edits */
 
+/* Start Dashboard Page */
+.home-stats .stat{
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 20px;
+  font-size: 15px;
+}
+.home-stats .stat strong{
+  display: block;
+  font-size: 50px;
+}
+.latest{
+  margin-top: 30px;
+}
+/* End Dashboard Page */
+
 /* Strart Members Page */
 h1{
   font-size: 55px;
