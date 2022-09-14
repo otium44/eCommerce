@@ -1,4 +1,6 @@
 <?php 
+  ob_start(); // output buffering start
+
   session_start();
 
   if (isset($_SESSION['Username'])) {
@@ -99,3 +101,4 @@
     exit();
 
   }
+  ob_end_flush();

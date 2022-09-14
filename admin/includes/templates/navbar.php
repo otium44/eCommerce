@@ -6,7 +6,7 @@
     <a class='navbar-brand' href="dashboard.php"><?php echo lang('Main'); ?></a>
     <div class="collapse navbar-collapse" id="app-nav">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('Category'); ?></a></li>
+        <li class="nav-item active"><a class="nav-link" href="categories.php"><?php echo lang('Category'); ?></a></li>
         <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('ITEMS'); ?></a></li>
         <li class="nav-item active"><a class="nav-link" href="members.php"><?php echo lang('MEMBERS'); ?></a></li>
         <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('STATISTICS'); ?></a></li>

@@ -9,6 +9,8 @@
 =================================================
 */
 
+  ob_start();
+
   session_start();
 
   $pageTitle = 'Members';
@@ -480,3 +482,5 @@
     exit();
 
   }
+
+  ob_end_flush(); // Release the output
