@@ -9,7 +9,8 @@
 
     /* Start Dashboard Page */ 
 
-  
+    $LatestUsers = 5; // the number of users will shown
+    $theLatest = getLatest("*", "users", "UserID", $LatestUsers); // we used it below in a loop to echo users
 
     ?>
 
@@ -26,7 +27,9 @@
           <div class="col-md-3">
             <div class="stat st-pending">
               Pending Members
-              <strong><a href="members.php?do=Manage&page=Pending">25</a></strong>
+              <strong><a href="members.php?do=Manage&page=Pending">
+                <?php echo checkItem("RegStatus", "users", 0); ?>
+              </a></strong>
             </div>
           </div>
           <div class="col-md-3">
@@ -49,9 +52,17 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="card">
-              <div class="card-header"><i class="fa fa-users"></i> Latest Registerd Users</div>
+              <div class="card-header"><i class="fa fa-users"></i> Latest <?php echo $LatestUsers; ?> Registerd Users</div>
               <div class="card-body">
-                Test
+                <?php 
+      
+                  foreach ($theLatest as $user) {
+
+                    echo $user['Username'] . '<br>';
+
+                  }
+                
+                ?>
               </div>
             </div>
           </div>

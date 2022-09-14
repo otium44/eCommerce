@@ -26,3 +26,9 @@ countItem Function
 =======================================
 This Function count how many users are registered in the database
 it has two arguments you can use it to count anything else.
+
+
+getLatest Function
+=======================================
+This Function fetch last thing you want from the database
+ex. users, comments, you can select the number of the selected object.

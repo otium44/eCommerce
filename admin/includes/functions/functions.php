@@ -101,3 +101,26 @@ function countItems($item, $table) {
     echo $stmt3->fetchColumn();
 
 }
+
+/*
+Get Latest records function v1.0
+function to get latest items from database ex: comments, items, users
+$select = field to select
+$table = the table to choose from
+$limit = number of records to get
+$order = the number of the selected object
+*/
+
+function getLatest($select, $table, $order, $limit = 5) {
+
+    global $con;
+
+    $getstmt = $con->prepare("SELECT $select FROM $table ORDER BY $order DESC LIMIT $limit");
+
+    $getstmt->execute();
+
+    $rows = $getstmt->fetchAll();
+
+    return $rows;
+
+}

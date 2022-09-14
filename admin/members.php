@@ -66,7 +66,7 @@
                     
                         if ($row['RegStatus'] == 0) {
 
-                          echo "<a href='members.php?do=Delete&userid=". $row['UserID'] ."' class='btn btn-info ml-1'><i class='fa-solid fa-check'></i> Activate</a>";
+                          echo "<a href='members.php?do=Activate&userid=". $row['UserID'] ."' class='btn btn-info ml-1'><i class='fa-solid fa-check'></i> Activate</a>";
 
                         }
 
@@ -416,6 +416,43 @@
             echo "<div class='container'>";
 
             $theMsg =  "<div class='alert alert-success'>" . $stmt->rowCount() . ' Record Deleted' . "</div>";
+
+            redirectHome($theMsg, 'back');
+
+
+        } else { 
+
+          echo "<div class='container'>";
+
+          $theMsg = '<div class="alert alert-danger">There No Such User</div>';
+
+          redirectHome($theMsg);
+
+        }
+
+      echo '</div>';
+
+    } elseif ($do == 'Activate') { // ===== Activate Page =====
+
+      echo "<h1 class='text-center'>Activate Member</h1>";
+      echo "<div class='container'>";
+
+        // Check If Get Request userid is Numeric & Get the integer value of it
+      
+        $userid = (isset($_GET['userid']) && is_numeric($_GET['userid'])) ? intval($_GET['userid']) : 0;
+
+        // Select All Data depend on this ID
+
+        $check = checkItem('userid', 'users', $userid);
+        
+        if ($check > 0) { 
+
+            $stmt = $con->prepare("UPDATE users SET RegStatus = 1 WHERE UserID = ?");
+            $stmt->execute(array($userid));
+
+            echo "<div class='container'>";
+
+            $theMsg =  "<div class='alert alert-success'>" . $stmt->rowCount() . ' Record Activated' . "</div>";
 
             redirectHome($theMsg, 'back');
 
