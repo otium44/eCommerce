@@ -10,6 +10,9 @@ body{
   top: 0px;
   color: #d20707;
 }
+input[type='radio']:not(:checked) + label{
+  color: rgb(124, 124, 124);
+}
 /* End Main Rulez */
 
 /* Start Login Form */
@@ -70,7 +73,9 @@ a.text-light:hover, a.text-light:focus {
 .form-control{
   position: relative;
 }
-
+.btn{
+  padding: 3px 8px;
+}
 /* End Bootstrap Edits */
 
 /* Start Dashboard Page */
@@ -116,9 +121,6 @@ a:hover{
 .latest-users li:nth-child(odd){
   background-color: rgb(240, 245, 240);
 }
-.latest-users .btn {
-  padding: 3px 8px;
-}
 /* End Dashboard Page */
 
 /* Strart Members Page */
@@ -147,11 +149,66 @@ h1{
   background-color: #333;
   color: #fff;
 }
-.main-table .btn{
-  padding: 3px 10px;
-}
 .add-btn i{
   font-size: 13px;
 }
 
 /* End Members Page */
+
+/* Start Categories Page */
+.categories .card-body{
+  padding: 0;
+}
+.categories .cat{
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.categories .cat .buttons{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+.categories .cat .buttons a{
+  transform: translateX(calc(100% + 10px));
+  transition: .4s;
+}
+.categories .cat:hover{
+  background-color: #eee;
+}
+.categories .cat:hover .buttons a{
+  transform: translateX(0);
+}
+.categories .cat .buttons a:last-of-type{
+  transition-delay: 0.05s;
+}
+.categories .cat .buttons a{
+  margin-bottom: 10px;
+  display: block;
+}
+.categories hr{
+  margin: 0;
+}
+.categories .cat h3{
+  margin: 0 0 10px;
+}
+.categories hr:last-of-type{
+  display: none;
+}
+.categories .cat span{
+  color: #fff;
+  padding: 5px 10px;
+  margin-right: 6px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.categories .cat .visibility{
+  background-color: #c8102e;
+}
+.categories .cat .comment{
+  background-color: #003a70;
+}
+.categories .cat .ads{
+  background-color: #862633;
+}
+/* End Categories Page */

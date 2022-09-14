@@ -24,7 +24,31 @@
 
       $cats = $stmt2->fetchAll(); ?>
 
-      
+      <h1 class="text-center">Manage Categories</h1>
+      <div class="container categories">
+        <div class="card">
+          <div class="card-header text-center">Manage Categories</div>
+          <div class="card-body">
+            <?php 
+            foreach($cats as $cat){
+              echo "<div class='cat'>";
+                echo "<div class='buttons'>";
+                  echo "<a href='#' class='btn btn-primary'><i class='fa fa-edit'></i> Eidt</a>";
+                  echo "<a href='#' class='btn btn-danger'><i class='fa fa-close'></i> Delete</a>";
+                echo "</div>";
+                echo '<h3>' . $cat['Name'] . '</h3>';
+                echo '<p>'; if($cat['Description'] == ''){ echo "This category has no description"; } else {echo $cat['Description'];} echo '</p>';
+                if ($cat['Visibility'] == 1) { echo '<span class="visibility">Hidden</span>'; }
+                if ($cat['Allow_Comment'] == 1) { echo '<span class="comment">Comment Disabled</span>'; }
+                if ($cat['Allow_Ads'] == 1) { echo '<span class="ads">Ads Disabled</span>'; }
+              echo "</div>";
+              echo "<hr>";
+            }
+            
+            ?>
+          </div>
+        </div>
+      </div>
 
       <?php 
     } elseif ($do == 'Add') { ?>
@@ -50,7 +74,7 @@
             <div class="form-group row align-items-center">
               <label class='col-sm-2 control-label'>Ordering</label>
               <div class="col-sm-10 col-md-6">
-                <input type="text" name="Ordering" class='form-control' placeholder='Number to Arrange the Categories' />
+                <input type="number" name="Ordering" class='form-control' placeholder='Number to Arrange the Categories' />
               </div>
             </div>
             <!-- Visibility Field -->
