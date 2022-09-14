@@ -83,7 +83,7 @@ a.text-light:hover, a.text-light:focus {
 .home-stats .stat a{
   color: #fff;
 }
-.home-stats .stat a:hover{
+a:hover{
   text-decoration: none;
 }
 .home-stats .stat strong{
@@ -104,6 +104,20 @@ a.text-light:hover, a.text-light:focus {
 }
 .latest{
   margin-top: 30px;
+}
+.latest-users{
+  margin-bottom: 0;
+}
+.latest-users li{
+  padding: 5px 10px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.latest-users li:nth-child(odd){
+  background-color: rgb(240, 245, 240);
+}
+.latest-users .btn {
+  padding: 3px 8px;
 }
 /* End Dashboard Page */
 
@@ -139,4 +153,5 @@ h1{
 .add-btn i{
   font-size: 13px;
 }
+
 /* End Members Page */

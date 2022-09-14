@@ -54,15 +54,26 @@
             <div class="card">
               <div class="card-header"><i class="fa fa-users"></i> Latest <?php echo $LatestUsers; ?> Registerd Users</div>
               <div class="card-body">
-                <?php 
-      
-                  foreach ($theLatest as $user) {
+                <ul class='list-unstyled latest-users'>
+                  <?php 
 
-                    echo $user['Username'] . '<br>';
+                    foreach ($theLatest as $user) {
 
-                  }
-                
-                ?>
+                      echo '<li>';
+                        echo $user['Username'];
+                        echo '<a class="text-light btn btn-success float-right" href="members.php?do=Edit&userid=' . $user['UserID'] . '">';
+                          echo '<i class="fa fa-edit"></i> Edit';
+                        echo '</a>';
+                        if ($user['RegStatus'] == 0) {
+
+                            echo "<a href='members.php?do=Activate&userid=". $user['UserID'] ."' class='btn btn-info float-right mr-2'><i class='fa-solid fa-check'></i> Activate</a>";
+  
+                          }
+                      echo '</li>';
+                    }
+                  
+                  ?>
+                </ul>
               </div>
             </div>
           </div>
