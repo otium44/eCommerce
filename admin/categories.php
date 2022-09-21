@@ -19,7 +19,17 @@
 
     if ($do == 'Manage') {
 
-      $stmt2 = $con->prepare("SELECT * FROM categories");
+      $sort = 'ASC';
+
+      $sort_array = array('ASC', 'DESC');
+
+      if (isset($_GET['sort']) && in_array($_GET['sort'], $sort_array)) {
+
+        $sort = $_GET['sort'];
+
+      }
+
+      $stmt2 = $con->prepare("SELECT * FROM categories ORDER BY Ordering $sort");
       $stmt2->execute();
 
       $cats = $stmt2->fetchAll(); ?>
@@ -27,7 +37,13 @@
       <h1 class="text-center">Manage Categories</h1>
       <div class="container categories">
         <div class="card">
-          <div class="card-header text-center">Manage Categories</div>
+          <div class="card-header text-center">
+            Manage Categories
+            <div class="ordering pull-right">
+              Ordering:
+              <a class="<?php if($sort == 'ASC') echo 'Active'; ?>" href="?sort=ASC">Asc</a>
+              <a class="<?php if($sort == 'DESC') echo 'Active'; ?>" href="?sort=DESC">Desc</a>
+          </div>
           <div class="card-body">
             <?php 
             foreach($cats as $cat){
