@@ -51,7 +51,6 @@ function redirectHome($theMsg, $url = null, $seconds = 3) {
 
         }
 
-       
     }
 
     echo $theMsg;
@@ -84,10 +83,10 @@ function checkItem($select, $from, $value) {
 }
 
 /*
- Count Number Of Items Function v1.0
- Function to Count Number of Items Rows
- $item = the item to count 
- $table = the table to choose from 
+Count Number Of Items Function v1.0
+Function to Count Number of Items Rows
+$item = the item to count 
+$table = the table to choose from 
 */
 
 function countItems($item, $table) {

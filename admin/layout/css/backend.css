@@ -211,4 +211,7 @@ h1{
 .categories .cat .ads{
   background-color: #862633;
 }
+.add-category-btn{
+  width: fit-content;
+}
 /* End Categories Page */
