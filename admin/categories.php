@@ -37,12 +37,16 @@
       <h1 class="text-center">Manage Categories</h1>
       <div class="container categories">
         <div class="card">
-          <div class="card-header text-center">
-            Manage Categories
-            <div class="ordering pull-right">
-              Ordering:
-              <a class="<?php if($sort == 'ASC') echo 'Active'; ?>" href="?sort=ASC">Asc</a>
-              <a class="<?php if($sort == 'DESC') echo 'Active'; ?>" href="?sort=DESC">Desc</a>
+          <div class="card-header d-flex align-items-center justify-content-between">
+              <div><i class="fa fa-edit"></i> Manage Categories</div>
+              <div class="option pull-right">
+                <i class="fa fa-sort"></i> Ordering:[
+                <a class="<?php if($sort == 'ASC') echo 'active'; ?>" href="?sort=ASC">Asc</a> |
+                <a class="<?php if($sort == 'DESC') echo 'active'; ?>" href="?sort=DESC">Desc</a>]
+                <i class="fa fa-eye"></i> View:[
+                <span class='active' data-view='full'>Full</span> | 
+                <span data-view='classic'>Classic</span>] 
+            </div>
           </div>
           <div class="card-body">
             <?php 
@@ -53,10 +57,12 @@
                   echo "<a href='categories.php?do=Delete&catid=". $cat['ID'] ."' class='btn btn-danger'><i class='fa fa-close'></i> Delete</a>";
                 echo "</div>";
                 echo '<h3>' . $cat['Name'] . '</h3>';
-                echo '<p>'; if($cat['Description'] == ''){ echo "This category has no description"; } else {echo $cat['Description'];} echo '</p>';
-                if ($cat['Visibility'] == 1) { echo '<span class="visibility">Hidden</span>'; }
-                if ($cat['Allow_Comment'] == 1) { echo '<span class="comment">Comment Disabled</span>'; }
-                if ($cat['Allow_Ads'] == 1) { echo '<span class="ads">Ads Disabled</span>'; }
+                echo '<div class="full-view">';
+                  echo '<p>'; if($cat['Description'] == ''){ echo "This category has no description"; } else {echo $cat['Description'];} echo '</p>';
+                  if ($cat['Visibility'] == 1) { echo '<span class="visibility"><i class="fa fa-eye"></i> Hidden</span>'; }
+                  if ($cat['Allow_Comment'] == 1) { echo '<span class="comment"><i class="fa fa-close"></i> Comment Disabled</span>'; }
+                  if ($cat['Allow_Ads'] == 1) { echo '<span class="ads"><i class="fa fa-close"></i> Ads Disabled</span>'; }
+                echo '</div>';
               echo "</div>";
               echo "<hr>";
             }

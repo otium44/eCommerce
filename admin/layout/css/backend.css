@@ -159,7 +159,22 @@ h1{
 .categories .card-body{
   padding: 0;
 }
+.categories .option{
+  color: #204056;
+}
+.categories .option a{
+  color: #204056ad;
+}
+.categories .option span{
+  color: #204056ad;
+  cursor: pointer;
+}
+.categories .option .active{
+  color: #f65a5b;
+}
+
 .categories .cat{
+  text-align: start;
   padding: 15px;
   position: relative;
   overflow: hidden;
@@ -168,9 +183,11 @@ h1{
   position: absolute;
   top: 20px;
   right: 10px;
+  display: flex;
+  gap: 10px;
 }
 .categories .cat .buttons a{
-  transform: translateX(calc(100% + 10px));
+  transform: translateX(calc(250%));
   transition: .4s;
 }
 .categories .cat:hover{
@@ -190,7 +207,14 @@ h1{
   margin: 0;
 }
 .categories .cat h3{
-  margin: 0 0 10px;
+  margin: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #6a6a6a;
+}
+.categories .full-view p{
+  margin: 10px 0 10px;
+  color: #707070;
 }
 .categories hr:last-of-type{
   display: none;
@@ -212,6 +236,7 @@ h1{
   background-color: #862633;
 }
 .add-category-btn{
+  margin: 20px;
   width: fit-content;
 }
 /* End Categories Page */
