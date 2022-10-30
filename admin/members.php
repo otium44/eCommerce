@@ -216,7 +216,7 @@
 
       $theMsg = "<div class='alert alert-success'>" . $stmt->rowCount() . ' Record Updated' . "</div>";
 
-      redirectHome($theMsg, 'back');
+      redirectHome($theMsg);
 
 
     }
