@@ -298,6 +298,7 @@ if (isset($_SESSION['Username'])) {
       <h1 class='text-center'>Edit Item</h1>
               <div class="container edit-page-container">
                 <form action="?do=Update" method="POST">
+                  <input type="hidden" name="itemid" value="<?php echo $itemid;  ?>">
                   <!-- Name Field -->
                   <div class="form-group row align-items-center">
                     <label class='col-sm-2'>Name</label>
