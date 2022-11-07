@@ -10,3 +10,4 @@
   <title><?php getTitle(); ?></title>
 </head>
 <body>
+</body>

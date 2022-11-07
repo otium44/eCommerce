@@ -9,6 +9,7 @@
         <li class="nav-item active"><a class="nav-link" href="categories.php"><?php echo lang('Category'); ?></a></li>
         <li class="nav-item active"><a class="nav-link" href="items.php"><?php echo lang('ITEMS'); ?></a></li>
         <li class="nav-item active"><a class="nav-link" href="members.php"><?php echo lang('MEMBERS'); ?></a></li>
+        <li class="nav-item active"><a class="nav-link" href="comments.php"><?php echo lang('COMMENTS'); ?></a></li>
         <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('STATISTICS'); ?></a></li>
         <li class="nav-item active"><a class="nav-link" href="#"><?php echo lang('LOGS'); ?></a></li>
       </ul>
@@ -18,6 +19,7 @@
             <?php echo $_SESSION['Username'] ?>
           </a>
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+            <a href="../index.php">Visit Shop</a>
             <a class="dropdown-item text-light" href="members.php?do=Edit&userid=<?php echo $_SESSION['ID']; ?>">Edit Profile</a>
             <a class="dropdown-item text-light" href="#">Settings</a>
             <a class="dropdown-item text-light" href="logout.php">Logout</a>

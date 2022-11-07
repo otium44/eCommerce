@@ -33,9 +33,11 @@
 
       }
 
-      $stmt = $con->prepare("SELECT * FROM users WHERE GroupID != 1 $query");
+      $stmt = $con->prepare("SELECT * FROM users WHERE GroupID != 1 $query ORDER BY UserID DESC");
       $stmt->execute();
       $rows = $stmt->fetchAll();
+
+      if (!empty($rows)) {
 
 
       ?>
@@ -82,9 +84,16 @@
             </table>
           </div>
           <a href='members.php?do=Add' class='btn btn-primary add-btn'><i class="fa fa-plus"></i> New Member</a>
-
         </div>
-      <?php
+      <?php } else {
+        echo '<div class="contener">';
+        echo '<div class="alert alert-info">There\'s No Members To Show';
+        echo '</div>'; ?>
+        </div>
+          <a href='members.php?do=Add' class='btn btn-primary add-btn'><i class="fa fa-plus"></i> New Member</a>
+        </div>
+
+      <?php }
     } else if ($do == 'Add'){ 
       // ===== Add Members Page =====
       ?>
@@ -370,18 +379,34 @@
 
         if (empty($formErrors)) {
 
-        // Update the database with this info
+          $stmt2 = $con->prepare("SELECT * FROM users WHERE Username = ? AND UserID != ?");
 
-        $stmt = $con->prepare("UPDATE users SET Username = ?, Email = ?, FullName = ?, Password = ? WHERE UserID = ?");
-        $stmt->execute(array($user, $email, $name, $pass, $id));
+          $stmt2->execute(array($user, $id));
 
-        // Echo Success Message
+          $count = $stmt2->rowCount();
 
-        echo "<div class='container'>";
+          if ($count == 1) {
 
-        $theMsg =  "<div class='alert alert-success'>" . $stmt->rowCount() . ' Record Updated' . "</div>";
+            echo '<div class="alert alert-danger">User Exist\'s</div>';
 
-        redirectHome($theMsg, 'back');
+            redirectHome($theMsg, 'back');
+
+          } else {
+
+              // Update the database with this info
+
+              $stmt = $con->prepare("UPDATE users SET Username = ?, Email = ?, FullName = ?, Password = ? WHERE UserID = ?");
+              $stmt->execute(array($user, $email, $name, $pass, $id));
+
+              // Echo Success Message
+
+              echo "<div class='container'>";
+
+              $theMsg =  "<div class='alert alert-success'>" . $stmt->rowCount() . ' Record Updated' . "</div>";
+
+              redirectHome($theMsg, 'back');
+
+          }
         
       }
 
