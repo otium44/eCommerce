@@ -20,11 +20,11 @@
     </button>
     <a class='navbar-brand' href="index.php">Homepage</a>
     <div class="collapse navbar-collapse" id="app-nav">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class=" navbar-nav navbar-right ml-auto">
       <?php 
           foreach (getCat() as $cat) {
 
-            echo '<li><a href="categories.php?pageid='. $cat['ID'] .'&pagename='. str_replace(' ', '-', $cat['Name']) .'">' . $cat['Name'] . '</a></li>';
+            echo '<li class="nav-item"><a class="nav-link" href="categories.php?pageid='. $cat['ID'] .'&pagename='. str_replace(' ', '-', $cat['Name']) .'">' . $cat['Name'] . '</a></li>';
         
           }
       ?>
